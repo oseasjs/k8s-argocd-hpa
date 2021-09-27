@@ -15,7 +15,7 @@ spec:
       containers:
       - name: express
         imagePullPolicy: Always
-        image: oseasjs/poc-autoscaling:latest
+        image: oseasjs/poc-autoscaling:1.0
         ports:
         - containerPort: 3000
         resources:
