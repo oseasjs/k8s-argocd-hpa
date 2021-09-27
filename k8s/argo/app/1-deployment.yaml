@@ -17,7 +17,7 @@ spec:
         imagePullPolicy: Always
         image: oseasjs/poc-autoscaling:latest
         ports:
-        - containerPort: 8080
+        - containerPort: 3000
         resources:
           limits:
             cpu: 500m
