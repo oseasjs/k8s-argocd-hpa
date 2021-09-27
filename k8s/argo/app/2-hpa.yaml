@@ -9,7 +9,7 @@ spec:
     kind: Deployment
     name: express
   minReplicas: 1
-  maxReplicas: 10
+  maxReplicas: 5
   behavior:
     scaleUp:
       policies:
