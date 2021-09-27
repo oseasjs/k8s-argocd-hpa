@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: express-dep
+  name: express
   namespace: default
 spec:
   selector:

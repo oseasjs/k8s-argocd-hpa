@@ -13,7 +13,7 @@ spec:
       recurse: true
   destination:
     server: https://kubernetes.default.svc
-    namespace: poc-autoscaling
+    namespace: express
   syncPolicy:
     automated:
       prune: false
