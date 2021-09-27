@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/oseasjs/poc-autoscaling
     targetRevision: HEAD
-    path: argo/app
+    path: k8s/argo/app
     directory:
       recurse: true
   destination:
