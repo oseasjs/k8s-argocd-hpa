@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const PORT = 3000;
-const HOST = '0.0.0.0';
+const HOST = 'localhost';
 
 const fibonacci = (num) => {
   if (num <= 1) return 1;
