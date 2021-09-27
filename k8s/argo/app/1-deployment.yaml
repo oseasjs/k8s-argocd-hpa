@@ -25,3 +25,15 @@ spec:
           requests:
             cpu: 200m
             memory: 128Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: express-svc
+spec:
+  selector:
+    app: express
+  type: LoadBalancer
+  ports:
+    - port: 3000
+      targetPort: 3000
