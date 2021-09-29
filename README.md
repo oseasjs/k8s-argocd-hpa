@@ -23,14 +23,14 @@
 
 ```
 minikube start
-minikube dashboard
+minikube stop
 ```
 
-**To expose Kubernetes Dashboard**
+**To expose Kubernetes Dashboard (on separate terminal)**
 
 `minikube dashboard`
 
-**To expose Kubernetes Loadbalance Services**
+**To expose Kubernetes Loadbalance Services (on separate terminal)**
 
 `minikube tunnel`
 
@@ -45,7 +45,7 @@ kubectl apply -f argo/argo-cd/argo-install.yaml
 kubectl apply -f argo/argo-cd/metrics-server.yaml
 ```
 
-**To expose ARGO Dashboard**
+**To expose ARGO Dashboard (on separate terminal)**
 
 `kubectl port-forward svc/argocd-server -n argocd 8080:443`
 
