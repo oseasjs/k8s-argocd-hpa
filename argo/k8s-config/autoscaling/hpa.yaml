@@ -13,21 +13,21 @@ spec:
   behavior:
     scaleUp:
       # Run scale up immediatelly 
-      # stabilizationWindowSeconds: 0
+      stabilizationWindowSeconds: 0
       policies:
       # Add one replica per time on each 10 seconds if needed
       - type: Pods
         value: 1
         periodSeconds: 10
     scaleDown:
-      # Run scale down on every 60 seconds
-      # stabilizationWindowSeconds: 60
+      # Run scale down on 60 seconds
+      stabilizationWindowSeconds: 60
       policies:
-      # Reduces 100% of replicas on each 10 seconds to the minimum allowed replicas
+      # Reduces 100% of replicas not used on each 10 seconds to the minimum allowed replicas
       - type: Percent
         value: 100
         periodSeconds: 10
-      # Reduces two replicas per time on each 10 seconds to the minimum allowed replicas
+      # Reduces two replicas not used per time on each 10 seconds to the minimum allowed replicas
       - type: Pods
         value: 2 
         periodSeconds: 10
