@@ -11,9 +11,11 @@
 
 ## Kubernetes Autoscaling Documentation
 
-- https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/
+- [Horizontal Pod Autoscaling](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/)
+  
+- [Horizontal Pod Autoscaling Walkthrough](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/)
 
-- https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/
+- [Managing Resources Containners](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/)
 
 ---
 

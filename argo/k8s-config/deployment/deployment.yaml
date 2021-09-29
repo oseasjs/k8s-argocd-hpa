@@ -18,6 +18,8 @@ spec:
       labels:
         app: poc-autoscaling
     spec:
+
+      # start a deployment running the image and expose it as a service using the following configuration
       containers:
         - name: poc-autoscaling
           imagePullPolicy: Always
@@ -25,6 +27,14 @@ spec:
           ports:
             - containerPort: 3000
           resources:
+
+            # Meaning of CPU:
+            # Limits and requests for CPU resources are measured in cpu units. One cpu, in Kubernetes, is equivalent to 1 vCPU/Core for cloud providers and 1 hyperthread on bare-metal Intel processors.
+            # The expression 0.1 is equivalent to the expression 100m, which can be read as "one hundred millicpu". Some people say "one hundred millicores", and this is understood to mean the same thing.
+            
+            # Meaning of memory: 
+            # Limits and requests for memory are measured in bytes. You can express memory as a plain integer or as a fixed-point number using one of these suffixes: E, P, T, G, M, k. 
+            # You can also use the power-of-two equivalents: Ei, Pi, Ti, Gi, Mi, Ki.
             limits:
               cpu: "500m"
               memory: "256Mi"

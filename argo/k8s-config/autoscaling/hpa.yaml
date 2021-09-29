@@ -4,13 +4,15 @@ metadata:
   name: poc-autoscaling-hpa
   namespace: default
 spec:
+
+  # HPA will increase and decrease the number of replicas (via the deployment) to maintain an average CPU utilization across all Pods
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
     name: poc-autoscaling-dpl
   minReplicas: 1
   maxReplicas: 5
-  
+
   behavior:
     
     scaleUp:
@@ -42,6 +44,7 @@ spec:
       # Setting selectPolicy to Min means that the autoscaler chooses the policy that affects the smallest number of Pods
       selectPolicy: Min
 
+  # Horizontal Pod Autoscaler uses this API to collect metrics
   # Any HPA target can be scaled based on the resource usage of the pods in the scaling target.
   # This is used to determine the resource utilization and used by the HPA controller to scale the target up or down.
   metrics:
