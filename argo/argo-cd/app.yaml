@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: k8s-config
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/oseasjs/poc-autoscaling.git
+    targetRevision: HEAD
+    path: argo/k8s-config
+    directory:
+      recurse: true
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false

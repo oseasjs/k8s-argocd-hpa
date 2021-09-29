@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: poc-autoscaling-dpl
+  namespace: default
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  selector:
+    matchLabels:
+      app: poc-autoscaling
+  template:
+    metadata:
+      labels:
+        app: poc-autoscaling
+    spec:
+      containers:
+        - name: poc-autoscaling
+          imagePullPolicy: Always
+          image: oseasjs/poc-autoscaling:1.0
+          ports:
+            - containerPort: 3000
+          resources:
+            limits:
+              cpu: "500m"
+              memory: "256Mi"
+            requests:
+              cpu: "200m"
+              memory: "128Mi"
