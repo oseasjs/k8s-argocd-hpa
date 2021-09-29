@@ -5,6 +5,9 @@
 - [Minikube](https://minikube.sigs.k8s.io/docs/start/);
 - [Argo CD](https://argo-cd.readthedocs.io/en/stable/);
 - [NestJS](https://docs.nestjs.com/);
+- [Watch](https://formulae.brew.sh/formula/watch);
+
+---
 
 ## Kubernetes Autoscaling Documentation
 
@@ -12,6 +15,7 @@
 
 - https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/
 
+---
 
 ## Useful Minikube Commands
 
@@ -30,6 +34,8 @@ minikube dashboard
 
 `minikube tunnel`
 
+---
+
 ## Useful Kubectl Commands
 
 ### To install ArgoCD and Metrics Server (run just once)
@@ -47,7 +53,21 @@ kubectl apply -f argo/argo-cd/metrics-server.yaml
 
 `kubectl apply -f argo/argo-cd/app.yaml`
 
-## Example CURLs to force Autoscaling
+---
+
+## Useful Watch Commands
+
+### To watch Pods in use
+
+`watch -n 1 -t kubectl get pods`
+
+### To watch HPA in use
+
+`watch -n 1 -t kubectl get hpa`
+
+---
+
+## CURLs examples to force Autoscaling
 
 ### To force High CPU usage
 
@@ -61,7 +81,7 @@ curl --location --request GET 'http://localhost:3000/high-cpu/100000000'
 curl --location --request GET 'http://localhost:3000/high-memory/25000000'
 ```
 
-<hr/>
+---
 
 ## Issues on scaleDown strategy (not refreshing automatically)
 https://github.com/kubernetes/kubernetes/issues/78761
