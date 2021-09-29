@@ -27,14 +27,7 @@ spec:
           resources:
             limits:
               cpu: "500m"
-              memory: "256m"
+              memory: "256Mi"
             requests:
-              cpu: "250m"
-              memory: "128m"
-          # resources:
-          #   limits:
-          #     cpu: "500m"
-          #     memory: "256Mi"
-          #   requests:
-          #     cpu: "200m"
-          #     memory: "128Mi"
+              cpu: "200m"
+              memory: "128Mi"
