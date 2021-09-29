@@ -80,7 +80,7 @@ curl --location --request GET 'http://localhost:3000/high-cpu/100000000'
 **To force High Memory Consume**
 
 ```
-curl --location --request GET 'http://localhost:3000/high-memory/25000000'
+curl --location --request GET 'http://localhost:3000/high-memory/27000000'
 ```
 
 ---
