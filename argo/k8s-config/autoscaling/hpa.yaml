@@ -10,7 +10,7 @@ spec:
     kind: Deployment
     name: poc-autoscaling-dpl
   minReplicas: 1
-  maxReplicas: 5
+  maxReplicas: 10
 
   behavior:
     
@@ -26,7 +26,7 @@ spec:
     
     scaleDown:
       # Run scale down on 60 seconds
-      stabilizationWindowSeconds: 60
+      stabilizationWindowSeconds: 30
       policies:
       
       # Allows at most 100% of the current replicas to be scaled down in 10 seconds
@@ -55,7 +55,7 @@ spec:
       name: cpu
       target:
         type: Utilization
-        averageUtilization: 80
+        averageUtilization: 50
 
   # With this metric the HPA controller will keep the average utilization of the pods in the scaling target at 70%.
   - type: Resource
@@ -63,4 +63,4 @@ spec:
       name: memory
       target:
         type: Utilization
-        averageUtilization: 70
+        averageUtilization: 50
