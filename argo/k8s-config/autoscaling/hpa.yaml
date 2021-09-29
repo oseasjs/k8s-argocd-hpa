@@ -10,34 +10,51 @@ spec:
     name: poc-autoscaling-dpl
   minReplicas: 1
   maxReplicas: 5
+  
   behavior:
+    
     scaleUp:
       # Run scale up immediatelly 
       stabilizationWindowSeconds: 0
       policies:
+      
       # Add one replica per time on each 10 seconds if needed
       - type: Pods
         value: 1
         periodSeconds: 10
+    
     scaleDown:
       # Run scale down on 60 seconds
       stabilizationWindowSeconds: 60
       policies:
-      # Reduces 100% of replicas not used on each 10 seconds to the minimum allowed replicas
+      
+      # Allows at most 100% of the current replicas to be scaled down in 10 seconds
       - type: Percent
         value: 100
+        # Indicates the length of time in the past for which the policy must hold true
         periodSeconds: 10
-      # Reduces two replicas not used per time on each 10 seconds to the minimum allowed replicas
+      
+      # Allows at most 2 replicas to be scaled down on every 10 seconds
       - type: Pods
         value: 2 
         periodSeconds: 10
+      
+      # Setting selectPolicy to Min means that the autoscaler chooses the policy that affects the smallest number of Pods
+      selectPolicy: Min
+
+  # Any HPA target can be scaled based on the resource usage of the pods in the scaling target.
+  # This is used to determine the resource utilization and used by the HPA controller to scale the target up or down.
   metrics:
+
+  # With this metric the HPA controller will keep the average utilization of the pods in the scaling target at 80%.
   - type: Resource
     resource:
       name: cpu
       target:
         type: Utilization
         averageUtilization: 80
+
+  # With this metric the HPA controller will keep the average utilization of the pods in the scaling target at 70%.
   - type: Resource
     resource:
       name: memory
