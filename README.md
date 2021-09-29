@@ -7,8 +7,10 @@
 - [NestJS](https://docs.nestjs.com/);
 
 ## Kubernetes Autoscaling Documentation
-https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/
-https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/
+
+- https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/
+
+- https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/
 
 
 ## Useful Minikube Commands
