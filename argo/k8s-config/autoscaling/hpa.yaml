@@ -31,28 +31,15 @@ spec:
         value: 2 
         periodSeconds: 10
   metrics:
-  - type: ContainerResource
-    containerResource:
+  - type: Resource
+    resource:
       name: cpu
       target:
         type: Utilization
         averageUtilization: 80
-  - type: ContainerResource
-    containerResource:
+  - type: Resource
+    resource:
       name: memory
       target:
         type: Utilization
         averageUtilization: 70
-  # metrics:
-  # - type: Resource
-  #   resource:
-  #     name: cpu
-  #     target:
-  #       type: Utilization
-  #       averageUtilization: 80
-  # - type: Resource
-  #   resource:
-  #     name: memory
-  #     target:
-  #       type: Utilization
-  #       averageUtilization: 70
