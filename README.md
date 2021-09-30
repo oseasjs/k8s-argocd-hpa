@@ -105,3 +105,5 @@ https://github.com/marcel-dempers/docker-development-youtube-series/tree/master/
 - [Autoscaling Features and Use Cases](https://medium.com/expedia-group-tech/autoscaling-in-kubernetes-options-features-and-use-cases-c8a6ce145957)
 - [Autoscaling When Use It](https://medium.com/expedia-group-tech/autoscaling-in-kubernetes-why-doesnt-the-horizontal-pod-autoscaler-work-for-me-5f0094694054)
 
+
+---
